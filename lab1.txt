@@ -1,0 +1,230 @@
+//name:  Huang Jiaming
+//NSID:  jih211
+//stuID: 11207964
+
+        jiajia@Usask ~ $ ssh jih211@tuxworld.usask.ca
+        Password: 
+        Last login: Mon May  9 20:05:55 2016 from s0106bcd1652eea84.ss.shawcable.net
+1(a)    jih211@tux1:~> mkdir 214lab1
+        jih211@tux1:~> cd 214lab1/
+        jih211@tux1:~/214lab1> touch file{1..15}.txt data{1..5}.dat
+        jih211@tux1:~/214lab1> ls -la
+        total 8
+        drwxr-x---  2 jih211 student 4096 May  9 20:07 ./
+        drwx------ 39 jih211 student 4096 May  9 20:06 ../
+        -rw-r-----  1 jih211 student    0 May  9 20:07 data1.dat
+        -rw-r-----  1 jih211 student    0 May  9 20:07 data2.dat
+        -rw-r-----  1 jih211 student    0 May  9 20:07 data3.dat
+        -rw-r-----  1 jih211 student    0 May  9 20:07 data4.dat
+        -rw-r-----  1 jih211 student    0 May  9 20:07 data5.dat
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file1.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file10.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file11.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file12.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file13.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file14.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file15.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file2.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file3.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file4.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file5.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file6.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file7.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file8.txt
+        -rw-r-----  1 jih211 student    0 May  9 20:07 file9.txt
+1(b)    jih211@tux1:~/214lab1> ls -a *.dat
+        data1.dat  data2.dat  data3.dat  data4.dat  data5.dat
+1(c)    jih211@tux1:~/214lab1> ls -la file??.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file10.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file11.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file12.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file13.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file14.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file15.txt
+1(d)    jih211@tux1:~/214lab1> file file[13469].txt
+        file1.txt: empty
+        file3.txt: empty
+        file4.txt: empty
+        file6.txt: empty
+        file9.txt: empty
+        jih211@tux1:~/214lab1> 
+
+        
+2(a)    jih211@tux1:~/214lab1> ls -l
+        total 0
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data1.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data2.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data3.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data4.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data5.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file1.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file10.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file11.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file12.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file13.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file14.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file15.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file2.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file3.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file4.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file5.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file6.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file7.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file8.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file9.txt
+        jih211@tux1:~/214lab1> rm -f fake_file.txt
+        jih211@tux1:~/214lab1> touch fake_file.txt
+        jih211@tux1:~/214lab1> ls -l
+        total 0
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data1.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data2.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data3.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data4.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data5.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:23 fake_file.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file1.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file10.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file11.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file12.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file13.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file14.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file15.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file2.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file3.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file4.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file5.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file6.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file7.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file8.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file9.txt
+        jih211@tux1:~/214lab1> rm -f fake_file.txt 
+        jih211@tux1:~/214lab1> ls -l
+        total 0
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data1.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data2.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data3.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data4.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 data5.dat
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file1.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file10.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file11.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file12.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file13.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file14.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file15.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file2.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file3.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file4.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file5.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file6.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file7.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file8.txt
+        -rw-r----- 1 jih211 student 0 May  9 20:07 file9.txt
+        jih211@tux1:~/214lab1> 
+2(b)    jih211@tux1:~/214lab1> emacs my_name.txt
+        jih211@tux1:~/214lab1> more my_name.txt 
+        name: Huang Jiaming
+        ID: 11207964
+        jih211@tux1:~/214lab1> cat my_name.txt fake_file.txt >&1
+        name: Huang Jiaming
+        ID: 11207964
+        cat: fake_file.txt: No such file or directory
+        jih211@tux1:~/214lab1> 
+2(c)    jih211@tux1:~/214lab1> ls
+        data1.dat  data4.dat  file10.txt  file13.txt  file2.txt  file5.txt  file8.txt
+        data2.dat  data5.dat  file11.txt  file14.txt  file3.txt  file6.txt  file9.txt
+        data3.dat  file1.txt  file12.txt  file15.txt  file4.txt  file7.txt  my_name.txt
+        jih211@tux1:~/214lab1> more my_name.txt 
+        name: Huang Jiaming
+        ID: 11207964
+        jih211@tux1:~/214lab1> cat my_name.txt fake_file.txt >standard_output.txt 2>standard_error.txt 
+        jih211@tux1:~/214lab1> more standard_output.txt 
+        name: Huang Jiaming
+        ID: 11207964
+        jih211@tux1:~/214lab1> more standard_error.txt 
+        cat: fake_file.txt: No such file or directory
+        jih211@tux1:~/214lab1> 
+2(d)    jih211@tux1:~/214lab1> ls
+        data1.dat  data4.dat  file10.txt  file13.txt  file2.txt  file5.txt  file8.txt
+        data2.dat  data5.dat  file11.txt  file14.txt  file3.txt  file6.txt  file9.txt
+        data3.dat  file1.txt  file12.txt  file15.txt  file4.txt  file7.txt  my_name.txt
+        jih211@tux1:~/214lab1> cat my_name.txt fake_file.txt 1>standard_output.txt 2>/dev/null
+        jih211@tux1:~/214lab1> more standard_output.txt 
+        name: Huang Jiaming
+        ID: 11207964
+        jih211@tux1:~/214lab1> ls
+        data1.dat  data5.dat   file12.txt  file2.txt  file6.txt  my_name.txt
+        data2.dat  file1.txt   file13.txt  file3.txt  file7.txt  standard_output.txt
+        data3.dat  file10.txt  file14.txt  file4.txt  file8.txt
+        data4.dat  file11.txt  file15.txt  file5.txt  file9.txt
+        jih211@tux1:~/214lab1> 
+        jih211@tux1:~/214lab1> top
+// press ctrl-z to suspend
+3(a)    top - 22:03:59 up 11:58,  4 users,  load average: 0.00, 0.01, 0.05
+        Tasks: 308 total,   1 running, 307 sleeping,   0 stopped,   0 zombie
+        %Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+        KiB Mem:  16418108 total,   979100 used, 15439008 free,    78020 buffers
+        KiB Swap: 16769952 total,        0 used, 16769952 free.   488388 cached Mem
+
+          PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND     
+        10889 nslcd     20   0  414760   6264   4920 S   5.5  0.0   0:01.31 nslcd       
+            1 root      20   0   33796   6484   3244 S   0.0  0.0   0:02.19 systemd     
+            2 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kthreadd    
+            3 root      20   0       0      0      0 S   0.0  0.0   0:00.01 ksoftirqd/0 
+            5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:+ 
+            6 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/u6+ 
+            7 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kworker/u6+ 
+            8 root      20   0       0      0      0 S   0.0  0.0   0:03.08 rcu_sched   
+            9 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh      
+           10 root      rt   0       0      0      0 S   0.0  0.0   0:00.03 migration/0 
+           11 root      rt   0       0      0      0 S   0.0  0.0   0:00.03 migration/1 
+           12 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/1 
+           14 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:+ 
+           15 root      20   0       0      0      0 S   0.0  0.0   0:00.08 kworker/u6+ 
+           16 root      rt   0       0      0      0 S   0.0  0.0   0:00.03 migration/2 
+           17 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/2 
+           19 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:+ 
+        [1]+  Stopped                 top
+        jih211@tux1:~/214lab1> 
+3(b)    jih211@tux1:~/214lab1> env | grep jih211
+        BIBINPUTS=.:/student/jih211/tex/bib:
+        USER=jih211
+        SCREENDIR=/student/jih211/tmp
+        _pam_krb5_stash_jih211_USASK.CA__1_shm=1245208/27031
+        MAIL=/var/spool/mail/jih211
+        PWD=/student/jih211/214lab1
+        TEXINPUTS=.:/student/jih211/tex/inputs:
+        HOME=/student/jih211
+        LOGNAME=jih211
+        OLDPWD=/student/jih211
+        jih211@tux1:~/214lab1>
+        jih211@tux1:~/214lab1> ps -ef | grep top
+        jih211   27179 27037  0 22:03 pts/2    00:00:00 top
+        jih211   27512 27037  0 22:17 pts/2    00:00:00 grep --color top 
+3(c)    jih211@tux1:~/214lab1> pstree -p jih211 -H 27179
+        gpg-agent(21056)
+
+        sshd(23530)---bash(23531)
+
+        sshd(27036)---bash(27037)-+-pstree(27597)
+                                  `-top(27179)
+
+        systemd(21000)---(sd-pam)(21001)
+        jih211@tux1:~/214lab1> 
+3(d)    jih211@tux1:~/214lab1> kill -9 27179
+        [1]+  Killed                  top
+        jih211@tux1:~/214lab1> 
+3(e)    jih211@tux1:~/214lab1> pstree -p jih211 -H 27179
+        gpg-agent(21056)
+
+        sshd(23530)---bash(23531)
+
+        sshd(27036)---bash(27037)---pstree(27746)
+
+        systemd(21000)---(sd-pam)(21001)
+        jih211@tux1:~/214lab1> 
+
+
+
+
+
