@@ -1,0 +1,201 @@
+//name: Huang Jiaming
+//NSID: jih211
+//StuID: 11207964
+
+
+1. server name: tux5
+        jih211@tux5:~> hostname
+        tux5
+
+2(a)    jih211@tux5:~> mkdir 214lab2 
+        jih211@tux5:~> cd 214lab2
+        jih211@tux5:~/214lab2> mkdir dir1 dir2
+        jih211@tux5:~/214lab2> ls
+        dir1/  dir2/
+        jih211@tux5:~/214lab2> cd dir1         
+        jih211@tux5:~/214lab2/dir1> cp /etc/passwd ../dir2/
+2(b)    jih211@tux5:~> cd 214lab2/
+        jih211@tux5:~/214lab2> ls
+        dir1/  dir2/
+        jih211@tux5:~/214lab2> tar -zcf dirs.tar.gz dir1/ dir2/
+        jih211@tux5:~/214lab2> ls
+        dir1/  dir2/  dirs.tar.gz
+        jih211@tux5:~/214lab2> echo "Batman" > favourite_movie.tar.gz
+        jih211@tux5:~/214lab2> ls
+        dir1/  dir2/  dirs.tar.gz  favourite_movie.tar.gz
+2(c)    jih211@tux5:~/214lab2> file *.gz  
+        dirs.tar.gz:            gzip compressed data, last modified: Thu May 12 12:27:47 2016, from Unix
+        favourite_movie.tar.gz: ASCII text
+        jih211@tux5:~/214lab2> 
+        
+3(a)    jih211@tux5:~/214lab2> w > wtemp.txt
+        jih211@tux5:~/214lab2> tail -n+3 wtemp.txt > w.txt
+        jih211@tux5:~/214lab2> more wtemp.txt w.txt 
+        ::::::::::::::
+        wtemp.txt
+        ::::::::::::::
+         12:43:39 up 5 days, 23:09, 25 users,  load average: 45.53, 45.49, 45.32
+        USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+        root     pts/0     Tue16   44:26m  7:09   7:09  top
+        yih877   pts/1     12:15    1:15   0.13s  0.13s -bash
+        chf354   pts/2     12:40    3.00s  0.07s  0.07s -bash
+        jrb871   pts/3     12:04    2:43   0.11s  0.11s -bash
+        slb097   pts/4     12:05   37:49   0.07s  0.07s -bash
+        slb097   pts/5     12:40    3:04   0.07s  0.07s -bash
+        dmp450   pts/6     12:21    2:58   0.17s  0.17s -bash
+        asl226   pts/7     10:07    1:43m  0.14s  0.14s -bash
+        slb097   pts/8     12:21    9:29   0.12s  0.08s -bash
+        rdc872   pts/9     11:21    1:22m  0.04s  0.04s -bash
+        jpj461   pts/10    11:21   27.00s  0.29s  0.29s -bash
+        alc960   pts/11    11:23    1:04m  0.10s  0.00s sshd: alc960 [priv] 
+        dmp450   pts/12    11:25    1:11m  0.21s  0.21s -bash
+        yih877   pts/13    11:31   45:22   0.09s  0.09s -bash
+        dmp450   pts/14    11:50   24:02   0.22s  0.22s -bash
+        ral833   pts/15    11:35    3.00s  2.49s  2.39s top
+        cen088   pts/16    12:22   46.00s  0.12s  0.00s /usr/bin/less -isr
+        alc960   pts/17    11:39    2:35   0.16s  0.16s -bash
+        jih211   pts/18    11:41    0.00s  0.30s  0.01s w
+        rdc872   pts/19    11:44    3:07   0.15s  0.15s -bash
+        asl226   pts/20    12:22   20:30   0.07s  0.07s -bash
+        shl864   pts/21    12:25   16:35   0.07s  0.07s -bash
+        sus530   pts/22    12:31    3.00s  0.06s  0.06s -bash
+        ehm011   pts/23    12:33   27.00s  0.08s  0.08s -bash
+        njh905   pts/24    12:41   19.00s  0.08s  0.08s -bash
+        ::::::::::::::
+        w.txt
+        ::::::::::::::
+        root     pts/0     Tue16   44:26m  7:09   7:09  top
+        yih877   pts/1     12:15    1:15   0.13s  0.13s -bash
+        chf354   pts/2     12:40    3.00s  0.07s  0.07s -bash
+        jrb871   pts/3     12:04    2:43   0.11s  0.11s -bash
+        slb097   pts/4     12:05   37:49   0.07s  0.07s -bash
+        slb097   pts/5     12:40    3:04   0.07s  0.07s -bash
+        dmp450   pts/6     12:21    2:58   0.17s  0.17s -bash
+        asl226   pts/7     10:07    1:43m  0.14s  0.14s -bash
+        slb097   pts/8     12:21    9:29   0.12s  0.08s -bash
+        rdc872   pts/9     11:21    1:22m  0.04s  0.04s -bash
+        jpj461   pts/10    11:21   27.00s  0.29s  0.29s -bash
+        alc960   pts/11    11:23    1:04m  0.10s  0.00s sshd: alc960 [priv] 
+        dmp450   pts/12    11:25    1:11m  0.21s  0.21s -bash
+        yih877   pts/13    11:31   45:22   0.09s  0.09s -bash
+        dmp450   pts/14    11:50   24:02   0.22s  0.22s -bash
+        ral833   pts/15    11:35    3.00s  2.49s  2.39s top
+        cen088   pts/16    12:22   46.00s  0.12s  0.00s /usr/bin/less -isr
+        alc960   pts/17    11:39    2:35   0.16s  0.16s -bash
+        jih211   pts/18    11:41    0.00s  0.30s  0.01s w
+        rdc872   pts/19    11:44    3:07   0.15s  0.15s -bash
+        asl226   pts/20    12:22   20:30   0.07s  0.07s -bash
+        shl864   pts/21    12:25   16:35   0.07s  0.07s -bash
+        sus530   pts/22    12:31    3.00s  0.06s  0.06s -bash
+        ehm011   pts/23    12:33   27.00s  0.08s  0.08s -bash
+        njh905   pts/24    12:41   19.00s  0.08s  0.08s -bash
+        jih211@tux5:~/214lab2>        
+3(b)    jih211@tux5:~/214lab2> cut -f 1 -d ' ' w.txt 
+        root
+        yih877
+        chf354
+        jrb871
+        slb097
+        slb097
+        dmp450
+        asl226
+        slb097
+        rdc872
+        jpj461
+        alc960
+        dmp450
+        yih877
+        dmp450
+        ral833
+        cen088
+        alc960
+        jih211
+        rdc872
+        asl226
+        shl864
+        sus530
+        ehm011
+        njh905
+        jih211@tux5:~/214lab2>
+3(c)    jih211@tux5:~/214lab2> more w.txt | tr -s ' ' > w1.txt
+        jih211@tux5:~/214lab2> more w1.txt 
+        root pts/0 Tue16 44:26m 7:09 7:09 top
+        yih877 pts/1 12:15 1:15 0.13s 0.13s -bash
+        chf354 pts/2 12:40 3.00s 0.07s 0.07s -bash
+        jrb871 pts/3 12:04 2:43 0.11s 0.11s -bash
+        slb097 pts/4 12:05 37:49 0.07s 0.07s -bash
+        slb097 pts/5 12:40 3:04 0.07s 0.07s -bash
+        dmp450 pts/6 12:21 2:58 0.17s 0.17s -bash
+        asl226 pts/7 10:07 1:43m 0.14s 0.14s -bash
+        slb097 pts/8 12:21 9:29 0.12s 0.08s -bash
+        rdc872 pts/9 11:21 1:22m 0.04s 0.04s -bash
+        jpj461 pts/10 11:21 27.00s 0.29s 0.29s -bash
+        alc960 pts/11 11:23 1:04m 0.10s 0.00s sshd: alc960 [priv] 
+        dmp450 pts/12 11:25 1:11m 0.21s 0.21s -bash
+        yih877 pts/13 11:31 45:22 0.09s 0.09s -bash
+        dmp450 pts/14 11:50 24:02 0.22s 0.22s -bash
+        ral833 pts/15 11:35 3.00s 2.49s 2.39s top
+        cen088 pts/16 12:22 46.00s 0.12s 0.00s /usr/bin/less -isr
+        alc960 pts/17 11:39 2:35 0.16s 0.16s -bash
+        jih211 pts/18 11:41 0.00s 0.30s 0.01s w
+        rdc872 pts/19 11:44 3:07 0.15s 0.15s -bash
+        asl226 pts/20 12:22 20:30 0.07s 0.07s -bash
+        shl864 pts/21 12:25 16:35 0.07s 0.07s -bash
+        sus530 pts/22 12:31 3.00s 0.06s 0.06s -bash
+        ehm011 pts/23 12:33 27.00s 0.08s 0.08s -bash
+        njh905 pts/24 12:41 19.00s 0.08s 0.08s -bash
+        jih211@tux5:~/214lab2> 
+3(d)    jih211@tux5:~/214lab2> sort -r -k 1.5,1.5 w1.txt 
+        slb097 pts/8 12:21 9:29 0.12s 0.08s -bash
+        slb097 pts/5 12:40 3:04 0.07s 0.07s -bash
+        slb097 pts/4 12:05 37:49 0.07s 0.07s -bash
+        cen088 pts/16 12:22 46.00s 0.12s 0.00s /usr/bin/less -isr
+        yih877 pts/13 11:31 45:22 0.09s 0.09s -bash
+        yih877 pts/1 12:15 1:15 0.13s 0.13s -bash
+        rdc872 pts/9 11:21 1:22m 0.04s 0.04s -bash
+        rdc872 pts/19 11:44 3:07 0.15s 0.15s -bash
+        jrb871 pts/3 12:04 2:43 0.11s 0.11s -bash
+        shl864 pts/21 12:25 16:35 0.07s 0.07s -bash
+        jpj461 pts/10 11:21 27.00s 0.29s 0.29s -bash
+        alc960 pts/17 11:39 2:35 0.16s 0.16s -bash
+        alc960 pts/11 11:23 1:04m 0.10s 0.00s sshd: alc960 [priv] 
+        dmp450 pts/6 12:21 2:58 0.17s 0.17s -bash
+        dmp450 pts/14 11:50 24:02 0.22s 0.22s -bash
+        dmp450 pts/12 11:25 1:11m 0.21s 0.21s -bash
+        chf354 pts/2 12:40 3.00s 0.07s 0.07s -bash
+        sus530 pts/22 12:31 3.00s 0.06s 0.06s -bash
+        ral833 pts/15 11:35 3.00s 2.49s 2.39s top
+        asl226 pts/7 10:07 1:43m 0.14s 0.14s -bash
+        asl226 pts/20 12:22 20:30 0.07s 0.07s -bash
+        jih211 pts/18 11:41 0.00s 0.30s 0.01s w
+        ehm011 pts/23 12:33 27.00s 0.08s 0.08s -bash
+        njh905 pts/24 12:41 19.00s 0.08s 0.08s -bash
+        root pts/0 Tue16 44:26m 7:09 7:09 top
+        jih211@tux5:~/214lab2> 
+        
+4.      jih211@tux5:~/214lab2> sort usernames.txt > temp.txt
+        jih211@tux5:~/214lab2> diff usernames.txt temp.txt 
+        18d17
+        < nslcd
+        19a19
+        > nslcd
+        jih211@tux5:~/214lab2> 
+//usernames.txt is not sorted because it's different from the sorted file.       
+//the output shows that in order to make the two files same , line 18 of 'usernames.txt' should be deleted and add new line 'nslcd' after line 19 of 'usernames.txt'.
+
+5.      
+        char *line = NULL;
+        bool is_quote = true;
+        ...
+        if (*line == '"')
+            is_quote = true;
+        else
+            is_quote = flase;
+    
+6.
+        i = 0;
+        while (i < arraySize) {
+            array[i] = 1;
+            i++;
+        }
+        
