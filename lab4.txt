@@ -1,0 +1,74 @@
+//Name:  Huang Jiaming
+//NSID:  jih211
+//StuID: 11207964
+ 
+1       jih211@tux7:~> hostname
+        tux7 
+        jih211@tux7:~> grep 'system' /etc/passwd | grep -v 'false'
+        messagebus:x:999:999:system user for dbus:/:/sbin/nologin
+        systemd-journal-gateway:x:994:994:systemd Journal Gateway:/:/sbin/nologin
+        systemd-journal-remote:x:993:993:systemd Journal Remote:/:/sbin/nologin
+        systemd-journal-upload:x:992:992:systemd Journal Upload:/:/sbin/nologin
+        systemd-network:x:991:991:systemd Network Management:/:/sbin/nologin
+        systemd-resolve:x:990:990:systemd Resolver:/:/sbin/nologin
+        systemd-timesync:x:989:989:systemd Time Synchronization:/:/sbin/nologin
+        polkitd:x:987:986:system user for polkit:/usr/lib/polkit-1:/sbin/nologin
+        colord:x:986:985:system user for colord:/var/lib/colord:/usr/sbin/nologin
+        rtkit:x:985:984:system user for rtkit:/proc:/sbin/nologin
+        mysql:x:983:981:system user for mariadb:/var/lib/mysql:/bin/bash
+        openvpn:x:982:977:system user for openvpn:/var/lib/openvpn:/bin/true
+        lightdm:x:981:976:system user for lightdm:/var/lib/lightdm:/sbin/nologin
+        rpc:x:980:975:system user for rpcbind:/var/lib/rpcbind:/sbin/nologin
+        apache:x:978:973:system user for webserver-base:/var/www:/bin/sh
+        sshd:x:977:972:system user for openssh:/var/empty:/sbin/nologin
+        sddm:x:976:971:system user for sddm:/var/lib/sddm:/sbin/nologin
+        nagios:x:966:957:system user for nagios:/var/log/nagios:/bin/sh
+        nx:x:964:411:system user for freenx:/var/lib/nxserver/nxhome:/usr/bin/nxserver
+        jih211@tux7:~> 
+        
+2       jih211@tux7:~/214lab4> egrep '(\<\w{1,}\>)\W+\1' sentences.txt 
+        This is a sentence sentence.
+        This is a a another sentence.
+        this this is a sentence.
+        Another matching matching example.
+        How many   many examples do we need?
+        jih211@tux7:~/214lab4> egrep -v '(\<\w{1,}\>)\W+\1' sentences.txt 
+        This is a good sentence.
+        This is a really good sentence.
+        This this is a sentence.
+        This example does not match.
+        
+3(a)    i=10,j=5
+        i=10,j=10
+        i=5, j=10
+        
+3(b)    for i=10,j=5 ,  output: 10 is greater than 5
+        for i=10,j=10,  output: 10 is smaller than 10
+        for i=5, j=10,  output: 5 is smaller than 10
+        modification: add a condition statement
+        if (i>j) {
+            printf("%d is greater than %d.\n", i, j);
+        } 
+        else if (i==j) {
+            printf("%d equals %d.\n", i, j);
+        }
+        else {
+            printf("%d is smaller than %d.\n", i, j); 
+        }    
+
+4(d)    jih211@tux7:~/214lab4> g++ -Wall -Wextra -Wpedantic leap_year.cc -o leapYear
+        leap_year.cc:34:14: warning: unused parameter 'argc' [-Wunused-parameter]
+         int main(int argc, char *argv[]) {
+                      ^
+        leap_year.cc:34:31: warning: unused parameter 'argv' [-Wunused-parameter]
+         int main(int argc, char *argv[]) {
+                               ^
+        jih211@tux7:~/214lab4> ./leapYear < leapin.txt > leapout.txt
+        
+4(e)    jih211@tux7:~/214lab4> diff leapout.txt expout.txt > leapdiff.txt
+        jih211@tux7:~/214lab4> 
+        
+4(f)    Inputs that can't be divided by 400 work correctly. 
+        Inputs can be divided by 400 works incorrectly.
+
+

@@ -1,0 +1,175 @@
+//name: Huang Jiaming
+//NSID: jih211
+//StuID: 11207964        
+        
+1(a)    jih211@tux7:~> POSTAL_CODE="S7N 4L3"
+        jih211@tux7:~> grep '[A-Z][0-9][A-Z] [0-9][A-Z][0-9]' <<< "$POSTAL_CODE"
+        S7N 4L3
+        jih211@tux7:~> POSTAL_CODE="s7N 4L3"
+        jih211@tux7:~> grep '[A-Z][0-9][A-Z] [0-9][A-Z][0-9]' <<< "$POSTAL_CODE"
+        jih211@tux7:~> 
+1(b)    jih211@tux7:~/214lab3> grep -E '^[IO].*[a-z]+.*box$' < mailinfo.txt 
+        Inbox
+        Is a match box
+        Outbox
+        jih211@tux7:~/214lab3> grep -Ev '^[IO].*[a-z]+.*box$' < mailinfo.txt 
+        the Inbox
+        Doesn't match
+        INBOX
+        Outbox1
+        InbOX
+        Ibox
+        I box
+1(c)    jih211@tux7:~/214lab3> grep -c '^[IO][a-z]\+box$' < mailinfo.txt 
+        2
+        jih211@tux7:~/214lab3> grep -cv '^[IO][a-z]\+box$' < mailinfo.txt 
+        8
+        jih211@tux7:~/214lab3> 
+        
+2(a)    jih211@tux7:~/214lab3> cp /etc/passwd ./passwd
+        jih211@tux7:~/214lab3> cut -f 1 -d ':' passwd 
+        root
+        bin
+        daemon
+        adm
+        lp
+        sync
+        mail
+        news
+        uucp
+        operator
+        games
+        nobody
+        messagebus
+        systemd-journal-gateway
+        systemd-journal-remote
+        systemd-journal-upload
+        systemd-network
+        systemd-resolve
+        systemd-timesync
+        vcsa
+        rpm
+        polkitd
+        colord
+        rtkit
+        gdm
+        mysql
+        openvpn
+        lightdm
+        rpc
+        davfs2
+        apache
+        sshd
+        sddm
+        rpcuser
+        ntp
+        postfix
+        nscd
+        nm-openconnect
+        local
+        ntop
+        svn
+        avahi
+        avahi-autoipd
+        nagios
+        nslcd
+        math
+        nx
+        boinc
+        jih211@tux7:~/214lab3> 
+        jih211@tux7:~/214lab3> cut -f 1 -d ':' passwd | sort -r
+2(b)    vcsa
+        uucp
+        systemd-timesync
+        systemd-resolve
+        systemd-network
+        systemd-journal-upload
+        systemd-journal-remote
+        systemd-journal-gateway
+        sync
+        svn
+        sshd
+        sddm
+        rtkit
+        rpm
+        rpcuser
+        rpc
+        root
+        postfix
+        polkitd
+        operator
+        openvpn
+        nx
+        ntp
+        ntop
+        nslcd
+        nscd
+        nobody
+        nm-openconnect
+        news
+        nagios
+        mysql
+        messagebus
+        math
+        mail
+        lp
+        local
+        lightdm
+        gdm
+        games
+        davfs2
+        daemon
+        colord
+        boinc
+        bin
+        avahi-autoipd
+        avahi
+        apache
+        adm
+        jih211@tux7:~/214lab3> 
+2(c)    jih211@tux7:~/214lab3> cut -f 1 -d ':' passwd | sort | head -1
+        adm
+        jih211@tux7:~/214lab3>
+2(d)    jih211@tux7:~/214lab3> cut -f 1 -d ':' passwd | sort | head -1 |cut -c 1
+        a
+        jih211@tux7:~/214lab3> 
+2(e)    jih211@tux7:~/214lab3> cut -f 1 -d ':' passwd | sort | head -1 |cut -c 1| tr '[:lower:]' '[:upper:]'
+        A
+        jih211@tux7:~/214lab3> 
+2(f)    jih211@tux7:~/214lab3> cut -f 1 -d ':' passwd | sort | head -1 > max_username.txt 
+        jih211@tux7:~/214lab3> more max_username.txt 
+        adm
+        jih211@tux7:~/214lab3> 
+        
+3(a)    jih211@tux7:~/214lab3> COLUMN1_HEADING="Name"
+        jih211@tux7:~/214lab3> COLUMN2_HEADING="Student number"
+        jih211@tux7:~/214lab3> printf "%.15s%20.15s\n%.15s%15.15s\n" "$COLUMN1_HEADING" "$COLUMN2_HEADING" "John" "123456789"
+        Name      Student number
+        John      123456789
+3(b)    jih211@tux7:~/214lab3> printf "$COLUMN1_HEADING    $COLUMN2_HEADING\nJohn    123456789\n"
+        Name    Student number
+        John    123456789
+        jih211@tux7:~/214lab3> printf "$COLUMN1_HEADING\t$COLUMN2_HEADING\nJohn\t123456789\n"
+        Name	Student number
+        John	123456789
+        jih211@tux7:~/214lab3> 
+
+
+4. for the second code fragments
+>>>    
+    if (i==3)
+        putchar( c );
+        flag=false;
+>>>
+    with braces,only 'putchar(c)' will be influenced by if statement. the next line 'flag=false' is out of the scope of if statement.
+    So put braces around the body of an if statement can make sure that the expected statements are included in the if statement.         
+    
+        
+5(a)
+    fragment i is better, the function name is too simplified,
+    comments in the first code fragment help us clearly know how the function restarts cycle.
+    
+5(b)
+    fragment ii is better, the for loop will terminate when *p equals zero. So there would be less than n chars copied from s2.
+        
+
