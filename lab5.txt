@@ -1,0 +1,89 @@
+//Name: Huang Jiaming
+//NSID: jih211
+//StuID: 11207964
+
+the lab is completed on tuxworld
+
+1(b)    jih211@tux6:~/214lab5> g++ -Wall -Wextra -m32 -o 32bit_sizes datatype_sizes.cc 
+        jih211@tux6:~/214lab5> g++ -Wall -Wextra -m64 -o 64bit_sizes datatype_sizes.cc 
+1(c)    jih211@tux6:~/214lab5> ./32bit_sizes 
+        sizes of long int are: 4 bytes
+        sizes of float are: 4 bytes
+        sizes of double are: 8 bytes
+        sizes of float * are: 4 bytes
+        jih211@tux6:~/214lab5> ./64bit_sizes 
+        sizes of long int are: 8 bytes
+        sizes of float are: 4 bytes
+        sizes of double are: 8 bytes
+        sizes of float * are: 8 bytes
+        jih211@tux6:~/214lab5> 
+// size of long int and pointers are different on different architectures.
+   For 32-bit architectures, they are 4bytes. for 64-bit, they are 8 bytes.
+   
+1(d)    jih211@tux6:~/214lab5> file 32bit_sizes 64bit_sizes 
+        32bit_sizes: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), 
+        for GNU/Linux 2.6.32, BuildID[sha1]=6f81db9cd4de0459281c02645c1217564cf56071, not stripped
+        64bit_sizes: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), 
+        for GNU/Linux 2.6.32, BuildID[sha1]=6b4ad92de156967fd7c326b41f8ea9677b30a316, not stripped
+        jih211@tux6:~/214lab5> 
+1(e)    jih211@tux6:~/214lab5> uname -a  
+        Linux tux6 3.19.8-desktop-3.mga5 #1 SMP Sat Jun 13 17:05:48 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+
+2(a)    i
+2(b)    ii
+
+
+3       jih211@tux6:~/214lab5> pr -tn L6Q4.txt 
+            1	// target program for Cmpt214 Lab 6 Question 4
+            2	//
+            3	// written by Brett Trost and Tony Kusalik
+            4	//                   October 2009
+            5	
+            6	/* test using 0, 5, -8, and -100 */
+            7	
+            8	int add1(int x) {
+            9		return x + 1;
+           10	}
+           11	
+           12	int subtract1(int x) {
+           13		return x - 1;
+           14	}
+           15	
+           16	int double_it(int x) {
+           17		return x * 2;
+           18	}
+           19	
+           20	int halve_it(int x) {
+           21	return x / 2;
+           22	}
+           23	
+           24	int main( void ) {
+           25		int myint;
+           26		int result;
+           27		scanf("%d", &myint);
+           28		if (myint >= 0) {
+           29			if (myint >= 10) {
+           30				result = halve_it(myint);
+           31			} else {
+           32				result = double_it(myint);
+           33			}
+           34		} else {
+           35			if (myint > -10) {
+           36				result = subtract1(myint);
+           37			} else if (myint > -20) {
+           38				result = 3;
+           39			} else {
+           40				result = add1(myint);
+           41				
+           42			}
+           43	
+           44		return result;
+           45	}
+        jih211@tux6:~/214lab5> 
+
+4(a)    double_it() , substract1() , add1() , 75% are called
+4(b)    60% are covered, result = double_it(myint); result = subtract1(myint); result = add1(myint)
+4(c)    33.3% are covered,myint >= 0 , myint > -10 
+4(d)    there are five branched , so there should be at least five test cases to provide a thorough test.    
+        5,15,-8,-15,-100   these test cases will provide a thorough test.
+

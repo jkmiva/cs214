@@ -1,0 +1,65 @@
+//Name: Huang Jiaming
+//NSID: jih211
+//StuID: 11207964
+
+1(a)    jih211@tux5:~/214lab6> tar -xvf L6Q4.with_cr.txt.tar 
+        L6Q4.with_cr.txt
+1(b)    jih211@tux5:~/214lab6> pr -tn L6Q4.with_cr.txt
+        }   1	return x + 1;x) {
+        }nt subtreturn x - 1;{
+        }nt doubreturn x * 2;{
+        }eturn x / 2;int x) {
+        int main} else {} else {result = 3;d1(myint);int);
+        }   6	return result;
+        jih211@tux5:~/214lab6> 
+1(c)    jih211@tux5:~/214lab6> hexdump -c L6Q4.with_cr.txt | grep '\\r'
+        0000010   {  \r  \t   r   e   t   u   r   n       x       +       1   ;
+        0000020  \r   }  \n  \r   i   n   t       s   u   b   t   r   a   c   t
+        0000030   1   (   i   n   t       x   )       {  \r  \t   r   e   t   u
+        0000040   r   n       x       -       1   ;  \r   }  \n  \r   i   n   t
+        0000060   )       {  \r  \t   r   e   t   u   r   n       x       *    
+        0000070   2   ;  \r   }  \n  \r   i   n   t       h   a   l   v   e   _
+        0000080   i   t   (   i   n   t       x   )       {  \r   r   e   t   u
+        0000090   r   n       x       /       2   ;  \r   }  \n  \r   i   n   t
+        00000a0       m   a   i   n   (   )       {  \r  \t   i   n   t       m
+        00000b0   y   i   n   t   ;  \r  \t   i   n   t       r   e   s   u   l
+        00000c0   t   ;  \r  \t   s   c   a   n   f   (   "   %   d   "   ,    
+        00000d0   &   m   y   i   n   t   )   ;  \r  \t   i   f       (   m   y
+        00000e0   i   n   t       >   =       0   )       {  \r  \t  \t   i   f
+        0000100  \r  \t  \t  \t   r   e   s   u   l   t       =       h   a   l
+        0000110   v   e   _   i   t   (   m   y   i   n   t   )   ;  \r  \t  \t
+        0000120   }       e   l   s   e       {  \r  \t  \t  \t   r   e   s   u
+        0000140   y   i   n   t   )   ;  \r  \t  \t   }  \r  \t   }       e   l
+        0000150   s   e       {  \r  \t  \t   i   f       (   m   y   i   n   t
+        0000160       >       -   1   0   )       {  \r  \t  \t  \t   r   e   s
+        0000180   m   y   i   n   t   )   ;  \r  \t  \t   }       e   l   s   e
+        00001a0   )       {  \r  \t  \t  \t   r   e   s   u   l   t       =    
+        00001b0   a   d   d   1   (   m   y   i   n   t   )   ;  \r  \t  \t   }
+        00001c0       e   l   s   e       {  \r  \t  \t  \t   r   e   s   u   l
+        00001d0   t       =       3   ;  \r  \t  \t   }  \n  \r  \t   r   e   t
+        00001e0   u   r   n       r   e   s   u   l   t   ;  \r   }  \n        
+        jih211@tux5:~/214lab6> 
+2(b)    jih211@tux5:~/214lab6> gcc -Wall -Wextra test_math.c -lm
+        jih211@tux5:~/214lab6> ./a.out 
+        1.5
+        0.997495
+        jih211@tux5:~/214lab6> ./a.out 
+        3.5
+        -0.350783
+        jih211@tux5:~/214lab6> ./a.out 
+        3.14159265
+        -0.000000
+2(c)    jih211@tux5:~/214lab6> gcc -Wall -Wextra -c test_math.c -lm
+        jih211@tux5:~/214lab6> file test_math.o
+        test_math.o: ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), not stripped
+        jih211@tux5:~/214lab6> 
+3       jih211@tux5:~/214lab6> export GREP_OPTIONS="--ignore-case"
+        jih211@tux5:~/214lab6> grep a <<< "A"
+        A
+        jih211@tux5:~/214lab6> 
+4       jih211@tux5:~/214lab6> ls -ld ~
+        drwx------ 47 jih211 student 4096 May 31 12:26 /student/jih211/
+        jih211@tux5:~/214lab6> 
+
+
+
