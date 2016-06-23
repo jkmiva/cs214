@@ -1,0 +1,55 @@
+
+1       '.FEATURES'
+             Expands to a list of special features supported by this version of
+             'make'.  Possible values include, but are not limited to:
+
+             'archives'
+                  Supports 'ar' (archive) files using special file name syntax.
+                  *Note Using 'make' to Update Archive Files: Archives.
+
+             'check-symlink'
+                  Supports the '-L' ('--check-symlink-times') flag.  *Note
+                  Summary of Options: Options Summary.
+
+             'else-if'
+                  Supports "else if" non-nested conditionals.  *Note Syntax of
+                  Conditionals: Conditional Syntax.
+
+             'jobserver'
+                  Supports "job server" enhanced parallel builds.  *Note
+                  Parallel Execution: Parallel.
+
+             'oneshell'
+                  Supports the '.ONESHELL' special target.  *Note Using One
+                  Shell: One Shell.
+
+             'order-only'
+                  Supports order-only prerequisites.  *Note Types of
+                  Prerequisites: Prerequisite Types.
+
+             'second-expansion'
+                  Supports secondary expansion of prerequisite lists.
+
+             'shortest-stem'
+                  Uses the "shortest stem" method of choosing which pattern, of
+                  multiple applicable options, will be used.  *Note How Patterns
+                  Match: Pattern Match.
+
+             'target-specific'
+                  Supports target-specific and pattern-specific variable
+                  assignments.  *Note Target-specific Variable Values:
+                  Target-specific.
+
+             'undefine'
+                  Supports the 'undefine' directive.  *Note Undefine
+                  Directive::.
+
+             'guile'
+                  Has GNU Guile available as an embedded extension language.
+                  *Note GNU Guile Integration: Guile Integration.
+                  
+             'load'
+                  Supports dynamically loadable objects for creating custom
+                  extensions.  *Note Loading Dynamic Objects: Loading Objects.
+
+2

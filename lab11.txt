@@ -1,0 +1,122 @@
+//Name: Huang Jiaming
+//NSID: jih211
+//StuID: 11207964
+
+1(a)    jih211@tux5:~/214lab11> cut -f3 country_data.txt > cutout.txt 
+        jih211@tux5:~/214lab11> awk '{printf $3"\n"}' country_data.txt > awkout.txt
+        jih211@tux5:~/214lab11> diff cutout.txt awkout.txt 
+        21c21
+        < 85
+        ---
+        > 255
+        32c32
+        < 74
+        ---
+        > 12
+        34c34
+        < 
+        ---
+        > 416
+        37,38c37,38
+        < 973   92
+        < 
+        ---
+        > 973
+        > 28
+        66c66
+        < 
+        ---
+        > 663
+        79c79
+        < 
+        ---
+        > 1424
+        89c89
+        < -
+        ---
+        > 2
+        jih211@tux5:~/214lab11> 
+1(b)    jih211@tux5:~/214lab11> awk '!/ /' country_data.txt > country_data_cleaned.txt
+        jih211@tux5:~/214lab11> cut -f3 country_data_cleaned.txt > cutout1.txt 
+        jih211@tux5:~/214lab11> awk '{printf $3"\n"}' country_data_cleaned.txt > awkout1.txt
+        jih211@tux5:~/214lab11> diff cutout1.txt awkout1.txt 
+        jih211@tux5:~/214lab11> 
+1(c)    jih211@tux5:~/214lab11> awk '($4<50)&&($4!="-"){print $1}' country_data_cleaned.txt 
+        Afghanistan
+        Bangladesh
+        Benin
+        Bhutan
+        Burkina_Faso
+        Burundi
+        Central_African_Republic
+        Côte_d'Ivoire
+        Ethiopia
+        Gambia
+        Guinea
+        Guinea-Bissau
+        Iraq
+        Mali
+        Mauritania
+        Morocco
+        Mozambique
+        Nepal
+        Niger
+        Pakistan
+        Senegal
+        Sierra_Leone
+        Yemen
+        jih211@tux5:~/214lab11> 
+1(d)    jih211@tux5:~/214lab11> more population.awk 
+        #!/bin/awk
+        BEGIN{
+            sum=0
+        }
+        {
+            if($1 ~ /a$/&&/^A/){
+	        sum += $2
+            }
+        }
+        END{
+            print sum
+        }
+
+        jih211@tux5:~/214lab11> awk -f population.awk country_data_cleaned.txt 
+        118071
+        jih211@tux5:~/214lab11> 
+1(e)    jih211@tux5:~/214lab11> awk 'BEGIN{OFS = "\t"}{$5=$3/($2/2)}{print $1,$2,$3,$4,$5}' country_data_cleaned.txt > country_data_birthrate.txt
+        jih211@tux5:~/214lab11> 
+2       jih211@tux5:~/214lab11> date | awk '{print "Month: "$2"\nYear: "$6}'
+        Month: Jun
+        Year: 2016
+        jih211@tux5:~/214lab11> 
+3(a)    jih211@tux5:~/214lab11> gcc -Wall -c -o queens.o queens.cc -I/student/214/include
+        jih211@tux5:~/214lab11> 
+3(b)    jih211@tux5:~/214lab11> g++ -o queens -L/student/214/lib -lqueens queens.o
+        jih211@tux5:~/214lab11>
+3(c)    jih211@tux5:~/214lab11> ./queens 
+        ./queens: error while loading shared libraries: libqueens.so: cannot open shared object file: No such file or directory
+        jih211@tux5:~/214lab11> export LD_LIBRARY_PATH=/student/214/lib
+        jih211@tux5:~/214lab11> ./queens 4
+        A solution exists for N = 4
+        .Q..
+        ...Q
+        Q...
+        ..Q.
+        jih211@tux5:~/214lab11> 
+3(d)    jih211@tux5:~/214lab11> file queens
+        queens: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=b863e91f2187ea8d6f24b46e534debee94bf6c93, not stripped
+        jih211@tux5:~/214lab11> ldd queens
+	        linux-vdso.so.1 (0x00007ffdc73fb000)
+	        libqueens.so => /student/214/lib/libqueens.so (0x00007f91e777a000)
+	        libstdc++.so.6 => /lib64/libstdc++.so.6 (0x00007f91e746e000)
+	        libm.so.6 => /lib64/libm.so.6 (0x00007f91e7168000)
+	        libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x00007f91e6f51000)
+	        libc.so.6 => /lib64/libc.so.6 (0x00007f91e6b9d000)
+	        /lib64/ld-linux-x86-64.so.2 (0x00007f91e797d000)
+        jih211@tux5:~/214lab11> 
+name: libqueens.so => /student/214/lib/libqueens.so (0x00007f91e777a000)         
+
+
+
+
+

@@ -1,0 +1,100 @@
+//Name: Huang Jiaming
+//NSID: jih211
+//StuID:11207964
+
+1.		ismac25:214lab7 jih211$ ./factor/factor 30000000-31000000 | egrep '(3[0-9]{7}) = \1' | head -20
+		30000001 = 30000001
+		30000023 = 30000023
+		30000037 = 30000037
+		30000041 = 30000041
+		30000049 = 30000049
+		30000059 = 30000059
+		30000071 = 30000071
+		30000079 = 30000079
+		30000083 = 30000083
+		30000109 = 30000109
+		30000133 = 30000133
+		30000137 = 30000137
+		30000149 = 30000149
+		30000163 = 30000163
+		30000167 = 30000167
+		30000169 = 30000169
+		30000193 = 30000193
+		30000199 = 30000199
+		30000247 = 30000247
+		30000251 = 30000251
+		ismac25:214lab7 jih211$ 
+		
+2(a)	ismac25:~ jih211$ svnadmin create svn_repository
+2(b)	ismac25:~ jih211$ mkdir myproject
+		ismac25:~ jih211$ cd myproject/
+		ismac25:myproject jih211$ mkdir trunk branches tags
+		ismac25:myproject jih211$ cd trunk
+		ismac25:trunk jih211$ echo "This is file 1" > test1.txt
+		ismac25:trunk jih211$ echo "This is file 2" > test2.txt
+		ismac25:trunk jih211$ echo "This is file 3" > test3.txt
+		ismac25:trunk jih211$ ls
+		test1.txt	test2.txt	test3.txt
+		ismac25:trunk jih211$ cd ../..
+		ismac25:~ jih211$ 
+2(c)	ismac25:~ jih211$ svn import ./myproject/ file://$HOME/svn_repository/ -m "initial import"
+		Adding         myproject/tags
+		Adding         myproject/trunk
+		Adding         myproject/trunk/test1.txt
+		Adding         myproject/trunk/test2.txt
+		Adding         myproject/trunk/test3.txt
+		Adding         myproject/branches
+
+		Committed revision 1.
+		ismac25:~ jih211$ rm -rf ./myproject/
+		ismac25:~ jih211$ 
+2(d)	ismac25:~ jih211$ mkdir work
+		ismac25:~ jih211$ svn co file://$HOME/svn_repository/trunk ./work/
+		A    work/test1.txt
+		A    work/test2.txt
+		A    work/test3.txt
+		Checked out revision 1.
+		ismac25:~ jih211$ cd work/
+		ismac25:work jih211$ 
+2(e)	ismac25:work jih211$ echo "this is file 4" > test4.txt
+		ismac25:work jih211$ svn add test4.txt 
+		A         test4.txt
+		ismac25:work jih211$ echo "This is the second line of file 2" >> test2.txt 
+		ismac25:work jih211$ 
+2(f)	ismac25:work jih211$ svn status -v -u
+						 1        1 jih211       test1.txt
+		M                1        1 jih211       test2.txt
+						 1        1 jih211       test3.txt
+		A                -       ?   ?           test4.txt
+						 1        1 jih211       .
+		Status against revision:      1
+		ismac25:work jih211$ 
+2(g)	ismac25:work jih211$ svn commit -m "add test4.txt, modify test2.txt"
+		Sending        test2.txt
+		Adding         test4.txt
+		Transmitting file data ..
+		Committed revision 2.
+		ismac25:work jih211$ svn update
+		Updating '.':
+		At revision 2.
+		ismac25:work jih211$ svn status -v -u
+						 2        1 jih211       test1.txt
+						 2        2 jih211       test2.txt
+						 2        1 jih211       test3.txt
+						 2        2 jih211       test4.txt
+						 2        2 jih211       .
+		Status against revision:      2
+		ismac25:work jih211$ 
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

@@ -1,0 +1,226 @@
+//Name: Huang Jiaming
+//NSID: jih211
+//StuID: 11207964
+
+1.      jih211@tux6:~/214lab9> echo $GREP_OPTIONS
+
+        jih211@tux6:~/214lab9> env GREP_OPTIONS=-i grep a <<< A
+        A
+        jih211@tux6:~/214lab9> grep a <<< A
+        jih211@tux6:~/214lab9> echo $GREP_OPTIONS
+
+        jih211@tux6:~/214lab9> 
+2(a)    jih211@tux6:~/214lab9> make -n
+        g++ -Wall -Wextra    power.cc   -o power
+        jih211@tux6:~/214lab9> make
+        g++ -Wall -Wextra    power.cc   -o power
+        jih211@tux6:~/214lab9> ./power infile.txt 
+        4 to the power of 5 is 1440
+        Segmentation fault
+        jih211@tux6:~/214lab9> 
+2(b)    jih211@tux6:~/214lab9> make -W power.cc 
+        g++ -Wall -Wextra -g    power.cc   -o power
+        jih211@tux6:~/214lab9> 
+2(c)    jih211@tux6:~/214lab9> gdb power
+        GNU gdb (GDB) 7.8.1-7.mga5 (Mageia release 5)
+        Copyright (C) 2014 Free Software Foundation, Inc.
+        License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+        This is free software: you are free to change and redistribute it.
+        There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+        and "show warranty" for details.
+        This GDB was configured as "x86_64-mageia-linux-gnu".
+        Type "show configuration" for configuration details.
+        For bug reporting instructions, please see:
+        <http://www.gnu.org/software/gdb/bugs/>.
+        Find the GDB manual and other documentation resources online at:
+        <http://www.gnu.org/software/gdb/documentation/>.
+        For help, type "help".
+        Type "apropos word" to search for commands related to "word"...
+        Reading symbols from power...done.
+        (gdb) run infile.txt 
+        Starting program: /tmp_mnt/student/jih211/214lab9/power infile.txt
+        4 to the power of 5 is 1440
+
+        Program received signal SIGSEGV, Segmentation fault.
+        0x0000000000400824 in swap (a=0x7fffffffde40, b=0x7fffffffde3c) at power.cc:32
+        32		*tmp = *a;
+        (gdb) backtrace full
+        #0  0x0000000000400824 in swap (a=0x7fffffffde40, b=0x7fffffffde3c) at power.cc:32
+                tmp = 0x0
+        #1  0x00000000004007a7 in main (argc=2, argv=0x7fffffffdf38) at power.cc:21
+                number = 4
+                power = 5
+                result = 1440
+                stream = 0x602010
+        (gdb) 
+2(d)    (gdb) list power.cc:32
+        27	}
+        28	
+        29	void swap(int *a, int *b) {
+        30		int *tmp=NULL;
+        31	
+        32		*tmp = *a;
+        33		*a = *b;
+        34		*b = *tmp;
+        35	}
+        36	
+        (gdb) frame 0
+        #0  0x0000000000400824 in swap (a=0x7fffffffde40, b=0x7fffffffde3c) at power.cc:32
+        32		*tmp = *a;
+        (gdb) print *a
+        $1 = 4
+        (gdb) print *b
+        $2 = 5
+        (gdb) print *tmp
+        Cannot access memory at address 0x0
+        (gdb) quit
+        A debugging session is active.
+
+	        Inferior 1 [process 13790] will be killed.
+
+        Quit anyway? (y or n) y
+        jih211@tux6:~/214lab9> 
+2(e)    jih211@tux6:~/214lab9> make -n
+        g++ -Wall -Wextra -g    power.cc   -o power
+        jih211@tux6:~/214lab9> make
+        g++ -Wall -Wextra -g    power.cc   -o power
+        jih211@tux6:~/214lab9> power infile.txt 
+        4 to the power of 5 is 1440
+        5 to the power of 4 is 2880
+        6 to the power of 2 is 60
+        2 to the power of 6 is 12
+        3 to the power of 7 is 252
+        7 to the power of 3 is 1260
+        1 to the power of 7 is 1
+        7 to the power of 1 is 7
+        2 to the power of 3 is 6
+        3 to the power of 2 is 12
+        0 to the power of 0 is 1
+        0 to the power of 0 is 1
+        0 to the power of 2 is 0
+        2 to the power of 0 is 1
+        2 to the power of 0 is 1
+        0 to the power of 2 is 0
+        jih211@tux6:~/214lab9> 
+2(f)    (gdb) b calc_pow(int, int) 
+        Breakpoint 1 at 0x400840: file power.cc, line 38.
+        (gdb) run infile.txt 
+        Starting program: /tmp_mnt/student/jih211/214lab9/power infile.txt
+
+        Breakpoint 1, calc_pow (num=4, pow=5) at power.cc:38
+        38		if ( pow == 0 ) {
+        (gdb) print {num, pow}
+        $3 = {4, 5}
+        (gdb) c
+        Continuing.
+
+        Breakpoint 1, calc_pow (num=5, pow=3) at power.cc:38
+        38		if ( pow == 0 ) {
+        (gdb) print {num, pow}
+        $3 = {5, 3}
+        (gdb) c
+        Continuing.
+
+        Breakpoint 1, calc_pow (num=3, pow=4) at power.cc:38
+        38		if ( pow == 0 ) {
+        (gdb) 
+2(g)    jih211@tux6:~/214lab9> make
+        g++ -Wall -Wextra -g    power.cc   -o power
+        jih211@tux6:~/214lab9> ./power infile.txt 
+        4 to the power of 5 is 1024
+        5 to the power of 4 is 625
+        6 to the power of 2 is 36
+        2 to the power of 6 is 64
+        3 to the power of 7 is 2187
+        7 to the power of 3 is 343
+        1 to the power of 7 is 1
+        7 to the power of 1 is 7
+        2 to the power of 3 is 8
+        3 to the power of 2 is 9
+        0 to the power of 0 is 1
+        0 to the power of 0 is 1
+        0 to the power of 2 is 0
+        2 to the power of 0 is 1
+        2 to the power of 0 is 1
+        0 to the power of 2 is 0
+        jih211@tux6:~/214lab9> 
+2(h)    (gdb) list 18,24
+        18		while (fscanf(stream, "%d %d", &number, &power) != EOF) {
+        19			result = calc_pow(number, power);
+        20			printf("%d to the power of %d is %d\n", number, power, result);
+        21			swap(&number, &power);
+        22			result = calc_pow(number, power);
+        23			printf("%d to the power of %d is %d\n", number, power, result);
+        24		}
+        (gdb) b 19
+        Breakpoint 1 at 0x400768: file power.cc, line 19.
+        (gdb) run < infile.txt 
+        Starting program: /tmp_mnt/student/jih211/214lab9/power < infile.txt
+
+        Breakpoint 1, main (argc=1, argv=0x7fffffffdf48) at power.cc:19
+        19			result = calc_pow(number, power);
+        (gdb) watch result
+        Hardware watchpoint 2: result
+        (gdb) c
+        Continuing.
+        Hardware watchpoint 2: result
+
+        Old value = 32767
+        New value = 1024
+        main (argc=1, argv=0x7fffffffdf48) at power.cc:20
+        20			printf("%d to the power of %d is %d\n", number, power, result);
+        (gdb) c
+        Continuing.
+        4 to the power of 5 is 1024
+        Hardware watchpoint 2: result
+
+        Old value = 1024
+        New value = 625
+        main (argc=1, argv=0x7fffffffdf48) at power.cc:23
+        23			printf("%d to the power of %d is %d\n", number, power, result);
+        (gdb) 
+2(i)    (gdb) print stream
+        $1 = (FILE *) 0x7ffff75aea00 <_IO_2_1_stdin_>
+        (gdb) print sizeof(stream)
+        $4 = 8
+        (gdb) ptype stream
+        type = struct _IO_FILE {
+            int _flags;
+            char *_IO_read_ptr;
+            char *_IO_read_end;
+            char *_IO_read_base;
+            char *_IO_write_base;
+            char *_IO_write_ptr;
+            char *_IO_write_end;
+            char *_IO_buf_base;
+            char *_IO_buf_end;
+            char *_IO_save_base;
+            char *_IO_backup_base;
+            char *_IO_save_end;
+            _IO_marker *_markers;
+            _IO_FILE *_chain;
+            int _fileno;
+            int _flags2;
+            __off_t _old_offset;
+            unsigned short _cur_column;
+            signed char _vtable_offset;
+            char _shortbuf[1];
+            _IO_lock_t *_lock;
+            __off64_t _offset;
+        ---Type <return> to continue, or q <return> to quit---
+            void *__pad1;
+            void *__pad2;
+            void *__pad3;
+            void *__pad4;
+            size_t __pad5;
+            int _mode;
+            char _unused2[20];
+        } *
+        (gdb) 
+
+
+        
+        
+        
+        
+

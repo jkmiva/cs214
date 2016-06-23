@@ -1,0 +1,83 @@
+//Name: Huang Jiaming
+//NSID: jih211
+//StuID: 11207964
+
+1(a)    jih211@tux5:~/214lab10> set -x
+        ++ history -a
+1(b)    jih211@tux5:~/214lab10> /bin/ls -l `which sh` `which bash`
+        ++ which sh
+        ++ which bash
+        + /bin/ls -l /bin/sh /bin/bash
+        -rwxr-xr-x 1 root root 860528 Jan 27  2015 /bin/bash
+        lrwxrwxrwx 1 root root      4 Jan 27  2015 /bin/sh -> bash
+        ++ history -a
+1(c)    jih211@tux5:~/214lab10> set -
+        + set -
+        jih211@tux5:~/214lab10> 
+1(d)    order:
+        1. which sh
+        2. which bash
+        3./bin/ls -l /bin/sh /bin/bash
+1(e)    /bin/sh is a symbolic link to /bin/bash, /bin/bash is the actual implementation
+        of sh(Shell Command Language)
+        
+2(a)    jih211@tux5:~/214lab10> rm -f foobar
+2(b)    jih211@tux5:~/214lab10> ls foobar
+        ls: cannot access foobar: No such file or directory
+2(c)    jih211@tux5:~/214lab10> echo $?
+        2
+2(d)    jih211@tux5:~/214lab10> echo $?
+        0
+        jih211@tux5:~/214lab10> 
+2(e)    the outpuf of 2(c) is '2' which means last command failed, because foobar doesn't exist which
+        can't be argument of ls
+        the output of 2(d) is '0' which indicates the last command 'echo $?' executed successfully.
+
+3(a)    jih211@tux5:~/214lab10> if test "foobar" = "`ls | grep 'foobar'`"; then printf "foobar does exist\n"; else printf "foobar does not exist\n"; fi
+        foobar does not exist
+        jih211@tux5:~/214lab10> touch foobar
+        jih211@tux5:~/214lab10> if test "foobar" = "`ls | grep 'foobar'`"; then printf "foobar does exist\n"; else printf "foobar does not exist\n"; fi
+        foobar does exist
+        jih211@tux5:~/214lab10>         
+3(b)    jih211@tux5:~/214lab10> if [ -f foobar ]
+        > then
+        > printf "foobar does exist\n"
+        > else
+        > printf "foobar does not exist\n"
+        > fi
+        foobar does exist
+3(c)    jih211@tux5:~/214lab10> rm -f foobar
+        jih211@tux5:~/214lab10> ls foobar 1>/dev/null 2>&1
+        jih211@tux5:~/214lab10> if expr $? > 0 ; then printf "foobar does not exist\n"; else printf "foobar does exist\n"; fi
+        foobar does not exist
+        jih211@tux5:~/214lab10> touch foobar
+        jih211@tux5:~/214lab10> ls foobar 1>/dev/null 2>&1
+        jih211@tux5:~/214lab10> if expr $? > 0 ; then printf "foobar does not exist\n"; else printf "foobar does exist\n"; fi
+        foobar does exist
+        jih211@tux5:~/214lab10> 
+    
+4(a)    jih211@tux5:~/214lab10> cut -f4-7 substrates.txt > temp1
+        jih211@tux5:~/214lab10> cut -f1-3 substrates.txt > temp2
+        jih211@tux5:~/214lab10> cut -f8-10 substrates.txt > temp3
+        jih211@tux5:~/214lab10> paste temp1 temp2 temp3 > substrates2.txt 
+        jih211@tux5:~/214lab10> wc substrates.txt substrates2.txt 
+          12104  121966  861561 substrates.txt
+          12104  121966  861561 substrates2.txt
+          24208  243932 1723122 total 
+        jih211@tux5:~/214lab10> rm -f temp*
+        jih211@tux5:~/214lab10>
+        
+        jih211@tux5:~/214lab10> chmod +x password.sh 
+5(a)    jih211@tux5:~/214lab10> gen_pass
+        -bash: gen_pass: command not found
+5(b)    jih211@tux5:~/214lab10> ./password.sh 
+5(c)    jih211@tux5:~/214lab10> gen_pass
+        -bash: gen_pass: command not found
+5(d)    jih211@tux5:~/214lab10> source ./password.sh 
+5(e)    jih211@tux5:~/214lab10> gen_pass
+        4sGGucTGl
+        jih211@tux5:~/214lab10>                                              
+5(f)    after step 5(d) ,I can successfully use gen_pass
+        bacause source load the funtion for the parent shell process
+
+
